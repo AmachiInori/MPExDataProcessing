@@ -1,6 +1,6 @@
 # MPExDataProcessing
 
-# BIT材料物理实验数据处理项目
+BIT材料物理实验数据处理项目
 
 本项目为自动化处理BIT材料物理实验的数据而作。
 
