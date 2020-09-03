@@ -15,8 +15,12 @@ C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(45,21): 
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(54,20): warning C4018: “<”: 有符号/无符号不匹配
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(56,18): warning C4018: “>”: 有符号/无符号不匹配
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(69,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(33,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(46,16): warning C4018: “>=”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(55,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(71,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(32,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(45,16): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(54,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(82,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(95,16): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(104,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(125,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(146,20): warning C4018: “<”: 有符号/无符号不匹配
   MPE.vcxproj -> C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\Debug\MPE.exe
