@@ -55,7 +55,7 @@ int console() {
         } else if (com == "exit") break;
         else if (com == "docu") {
             cin.clear();
-            system("start https://github.com/AmachiInori/MPExDataProcessing/blob/master/README.md");
+            system("start https://amachi.com.cn/_posts/2020-09-06-MPEDP%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/");
         } else {
             cout << '"' << com << "\"不是有效的命令\n";
         }
