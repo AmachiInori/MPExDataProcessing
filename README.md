@@ -1,4 +1,4 @@
-# MPExDataProcessing
+# [MPExDataProcessing](https://github.com/AmachiInori/MPExDataProcessing){:target="_blank"}
 
 BIT材料物理实验数据处理项目
 
@@ -22,5 +22,6 @@ BIT材料物理实验数据处理项目
 
 # 更新日志
 
+2020.09.06 0.11beta 修复了实验2的功能；修正了一些细节上的处理
 2020.09.05 0.10beta2 修复了在unicode字符集上的显示错误，修复了start处理异常输入时产生的问题  
 2020.09.05 0.10beta 第一版

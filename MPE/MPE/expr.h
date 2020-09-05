@@ -28,7 +28,7 @@ void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
 	}
 
 	cout << "-----------------------------------------------\n你的输入是：\n";
-	cout << "    序号       " << FST << "       " << SST << "\n";
+	cout << "    序号       " << FST << "   " << SST << "\n";
 	for (int i = 0; i < origin.size(); i++) {
 		cout << setw(8) << right << i << setw(8) << right << origin[i].first << setw(8) << right << origin[i].second << "\n";
 	}
@@ -50,7 +50,7 @@ void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
 		cin >> origin[point].first >> origin[point].second;
 		cout << "成功修改第" << point << "行为" << origin[point].first << " " << origin[point].second << "\n";
 		cout << "-----------------------------------------------\n你的输入是：\n";
-		cout << "    序号       " << FST << "       " << SST << "\n";
+		cout << "    序号   " << FST << "       " << SST << "\n";
 		for (int i = 0; i < origin.size(); i++) {
 			cout << setw(8) << right << i << setw(8) << right << origin[i].first << setw(8) << right << origin[i].second << "\n";
 		}
@@ -78,7 +78,7 @@ void dataInput(vector<double> &origin, string FST) {
 	}
 
 	cout << "-----------------------------------------------\n你的输入是：\n";
-	cout << "    序号       " << FST << "\n";
+	cout << "    序号   " << FST << "\n";
 	for (int i = 0; i < origin.size(); i++) {
 		cout << setw(8) << right << i << setw(8) << right << origin[i] << "\n";
 	}
@@ -100,7 +100,7 @@ void dataInput(vector<double> &origin, string FST) {
 		cin >> origin[point];
 		cout << "成功修改第" << point << "行为" << origin[point] << "\n";
 		cout << "-----------------------------------------------\n你的输入是：\n";
-		cout << "    序号       " << FST << "\n";
+		cout << "    序号   " << FST << "\n";
 		for (int i = 0; i < origin.size(); i++) {
 			cout << setw(8) << right << i << setw(8) << right << origin[i] << "\n";
 		}
@@ -115,17 +115,41 @@ int expr3() {
 	cin.clear();
 	cout << "\n-----------------------------------------------";
 	cout << "\n本子程序适用于材料物理实验:实验3 热塑性塑料熔体流动速率的测定\n";
-	vector<double> origin;
-	dataInput(origin, "weight");
-	vector<double> res;
-	for_each(origin.begin(), origin.end(), [&res](double temp) {
+	vector<double> mean(4, 0);
+	vector<vector<double>> origin(4);
+	vector<double> res(0);
+	const vector<string> text = {
+		"PE @ 190℃ 2160g",
+		"PE @ 190℃ 5000g",
+		"PP @ 230℃ 2160g",
+		"PP @ 230℃ 5000g"
+	};
+
+	for (int i = 0; i < 4; i++) {
+		cout << "\n请输入" << text[i] << "的数据(可以不是5个)\n";
+		dataInput(origin[i], "weight");
+		int tempMax = DBL_MIN, tempMin = DBL_MIN;
+		for_each(origin[i].begin(), origin[i].end(), [&tempMax, &tempMin, &origin, &mean, i](double temp) {
+			mean[i] += temp / origin[i].size();
+			tempMax = max(tempMax, temp);
+			tempMin = min(tempMin, temp);
+		});
+		if (tempMax - tempMin > 0.1 * mean[i]) {
+			cout << "\n这一组数据不符合最大值和最小值之差小于平均值的10%的规定，是否重新输入？(Y/N)";
+			char tempC;
+			cin >> tempC;
+			if (tempC == 'Y' || tempC == 'y') i -= 1;
+		}
+	}
+
+	for_each(mean.begin(), mean.end(), [&res](double temp) {
 		res.push_back(temp * 600 / 10);
 	});
 	cout << "-----------------------------------------------\n";
 	cout << "MFR结果是:\n";
-	cout << "    序号       " << "W" << "     " << "MFR" << "\n";
-	for (int i = 0; i < origin.size(); i++) {
-		cout << setw(8) << right << i << setw(8) << right << origin[i] << setw(8) << right << res[i] << "\n";
+	cout << "   	状态       " << "平均W" << "     " << "MFR" << "\n";
+	for (int i = 0; i < 4; i++) {
+		cout << text[i] << setw(8) << right << mean[i] << setw(8) << right << res[i] << "\n";
 	}
 	cout << "\n按任意键结束\n";
 	cin.get();
@@ -160,7 +184,7 @@ int expr2() {
 	cin.get();
 	funcDraw FD(smoothRes.first, smoothRes.second);
 	FD.compressed();
-	FD.setXYComment("T/K", "Data");
+	FD.setXYComment("T/℃", "Data");
 	FD.drawFunction(0, 0);
 	cin.get();
 	return 0;

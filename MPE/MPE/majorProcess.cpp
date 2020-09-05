@@ -21,6 +21,7 @@ int console() {
         cout << "help  显示帮助\n";
         cout << "list  显示支持的实验列表\n";
         cout << "start [expr number]  开始指定序号的实验处理\n";
+        cout << "docu  打开官方文档(github.com)\n";
         cout << "exit  退出程序\n";
         cout << "-----------------------------------------------\n";
     };
@@ -52,7 +53,10 @@ int console() {
                 cout << tempS << "不是有效的参数\n";
             }
         } else if (com == "exit") break;
-        else {
+        else if (com == "docu") {
+            cin.clear();
+            system("start https://github.com/AmachiInori/MPExDataProcessing/blob/master/README.md");
+        } else {
             cout << '"' << com << "\"不是有效的命令\n";
         }
     }
