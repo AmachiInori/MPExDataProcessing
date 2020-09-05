@@ -36,13 +36,20 @@ int console() {
             cin.clear();
             getList();
         } else if (com == "start") {
+            string tempS;
+            cin >> tempS;
             int temp;
-            cin >> temp;
+            try {
+                temp = stoi(tempS);
+            } catch (std::invalid_argument) {
+                cin.clear();
+                cout << tempS << "不是有效的参数\n";
+            }
             if (temp > 0 && temp < entrance.size()) {
                 cin.clear();
                 if(entrance[temp]() == 0) cout << "进程expr" << temp << "运行完成\n";
             } else {
-                cout << temp << "不是有效的参数\n";
+                cout << tempS << "不是有效的参数\n";
             }
         } else if (com == "exit") break;
         else {
