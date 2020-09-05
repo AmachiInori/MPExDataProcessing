@@ -43,8 +43,8 @@ C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(135,14): w
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(172,20): warning C4018: “<”: 有符号/无符号不匹配
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\majorProcess.cpp(49,34): warning C4018: “<”: 有符号/无符号不匹配
   正在生成代码
-  6 of 536 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
+  1 of 536 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
     3 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   MPE.vcxproj -> C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\Release\MPE.exe
