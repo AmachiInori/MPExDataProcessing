@@ -32,7 +32,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="majorProcess.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

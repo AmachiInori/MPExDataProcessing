@@ -39,4 +39,8 @@ C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(104,21): w
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(127,20): warning C4018: “<”: 有符号/无符号不匹配
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(148,20): warning C4018: “<”: 有符号/无符号不匹配
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\majorProcess.cpp(41,34): warning C4018: “<”: 有符号/无符号不匹配
-  MPE.vcxproj -> C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\Debug\MPE.exe
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 439 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  MPE.vcxproj -> C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\Release\MPE.exe
