@@ -254,6 +254,7 @@ int funcDraw::_drawPointsWithLine() {
 				putpixel(int(extraPointX[i] * _unitX + _xZero) + 1, int(-extraPointY[i] * _unitY + _yZero), BLACK);
 				putpixel(int(extraPointX[i] * _unitX + _xZero), int(-extraPointY[i] * _unitY + _yZero) + 1, BLACK);
 			} else {
+				/* 功能存在问题 删除
 				putpixel(int(_xZero + 0.1 * (right - left) + (extraPointX[i] - XMin) * _unitX), 
 						int(_yZero - 0.1 * (down - up) - (extraPointY[i] - YMin) * _unitY), BLACK);
 
@@ -265,9 +266,10 @@ int funcDraw::_drawPointsWithLine() {
 
 				putpixel(int(_xZero + 0.1 * (right - left) + (extraPointX[i] - XMin) * _unitX - 1), 
 						int(_yZero - 0.1 * (down - up) - (extraPointY[i] - YMin) * _unitY), BLACK);
-						
+
 				putpixel(int(_xZero + 0.1 * (right - left) + (extraPointX[i] - XMin) * _unitX), 
 						int(_yZero - 0.1 * (down - up) - (extraPointY[i] - YMin) * _unitY - 1), BLACK);
+				*/
 			}
 		}
 		cout << "Done.\n";
