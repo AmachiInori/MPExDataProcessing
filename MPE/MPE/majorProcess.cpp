@@ -21,7 +21,7 @@ int console() {
         cout << "help  显示帮助\n";
         cout << "list  显示支持的实验列表\n";
         cout << "start [expr number]  开始指定序号的实验处理\n";
-        cout << "docu  打开官方文档(github.com)\n";
+        cout << "docu  打开官方文档(amachi.com.cn)\n";
         cout << "exit  退出程序\n";
         cout << "-----------------------------------------------\n";
     };

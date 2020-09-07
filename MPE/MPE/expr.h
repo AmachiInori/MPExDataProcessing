@@ -28,7 +28,7 @@ void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
 	}
 
 	cout << "-----------------------------------------------\n你的输入是：\n";
-	cout << "    序号       " << FST << "   " << SST << "\n";
+	cout << "    序号       " << FST << "    " << SST << "\n";
 	for (int i = 0; i < origin.size(); i++) {
 		cout << setw(8) << right << i << setw(8) << right << origin[i].first << setw(8) << right << origin[i].second << "\n";
 	}
@@ -50,7 +50,7 @@ void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
 		cin >> origin[point].first >> origin[point].second;
 		cout << "成功修改第" << point << "行为" << origin[point].first << " " << origin[point].second << "\n";
 		cout << "-----------------------------------------------\n你的输入是：\n";
-		cout << "    序号   " << FST << "       " << SST << "\n";
+		cout << "    序号   " << FST << "        " << SST << "\n";
 		for (int i = 0; i < origin.size(); i++) {
 			cout << setw(8) << right << i << setw(8) << right << origin[i].first << setw(8) << right << origin[i].second << "\n";
 		}
@@ -179,13 +179,20 @@ int expr2() {
 	cout << "\n推测的突变点可能位于" << smoothRes.first[maxPoint] << "\n\n";
 	cout << "-----------------------------------------------\n";
 	cout << "即将开始绘图\n";
-
-	cin.get();
-	cin.get();
 	funcDraw FD(smoothRes.first, smoothRes.second);
+	cout << "是否需要保存绘制的图像?(Y/N)\n";
+	cout << "请注意，请保证上次通过本子程序保存的同名文件已被转移，否则将被覆盖\n";
+	string temp;
+	cin >> temp;
+
+	if (temp == "Y" || temp == "y")
+		FD.save(getDesktopPath() + "\\expr2.png");
+	cin.get();
 	FD.compressed();
 	FD.setXYComment("T/℃", "Data");
 	FD.drawFunction(0, 0);
+	if (temp == "Y" || temp == "y")
+		cout << "图像保存至：" << getDesktopPath() << "\n";
 	cin.get();
 	return 0;
 }

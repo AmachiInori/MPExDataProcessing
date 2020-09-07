@@ -1,0 +1,72 @@
+{
+    "configurations": [
+        {
+            "name": "GNU-C++",
+            "includePath": [
+                "${workspaceRoot}/**",
+                "D:/mingw64/include",
+                "D:/SFML-2.5.1/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "__GNUC__=6",
+                "__cdecl=__attribute__((__cdecl__))"
+            ],
+            "intelliSenseMode": "clang-x86",
+            "browse": {
+                "path": [
+                    "${workspaceRoot}",
+                    "D:/mingw64/lib/gcc/x86_64-w64-mingw32/lib",
+                    "D:/mingw64/lib/gcc/x86_64-w64-mingw32/lib32"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerPath": "D:/mingw64/bin/g++.exe",
+            "cStandard": "gnu18",
+            "cppStandard": "gnu++20",
+            "compilerArgs": [],
+            "configurationProvider": "ms-vscode.cmake-tools"
+        },
+        {
+            "name": "VC++2015",
+            "includePath": [
+                "D:/Visual Studio/VC/include",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt",
+                "${workspaceFolder}/**",
+                "D:/SFML-2.5.1/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "8.1",
+            "compilerPath": "D:/Visual Studio/VC/bin/cl.exe",
+            "cStandard": "c18",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "msvc-x64"
+        },
+        {
+            "name": "VC++2019",
+            "includePath": [
+                "D:/Visual Studio/2019/VC/Tools/MSVC/14.27.29110/include",
+                "D:/Visual Studio/2019/VC/Auxiliary/VS/include",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/ucrt",
+                "${workspaceFolder}/**",
+                "D:/SFML-2.5.1/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "8.1",
+            "compilerPath": "D:/Visual Studio/2019/VC/Tools/MSVC/14.27.29110/bin/Hostx86/x86",
+            "cStandard": "c18",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}

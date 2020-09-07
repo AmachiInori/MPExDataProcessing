@@ -23,11 +23,14 @@ private:
 	vector<double> resX;
 	vector<double> resY;
 
+	void Low_passFilter(double alpha);
 	void linearInsert();
 	void linearSmooth();
+
 public:
 	explicit smooth(vector<pair<double, double>> &ori, unsigned int _reso = 25, unsigned int smoothLevel = 3, unsigned int smoothTime = 10);
 	pair<vector<double>, vector<double>> runSmooth();
+	pair<vector<double>, vector<double>> runLPSmooth(double _alpha);
 };
 
 smooth::smooth(vector<pair<double, double>> &ori, unsigned int _reso, unsigned int _smoLe, unsigned int _smoTi) 
@@ -62,6 +65,15 @@ void smooth::linearSmooth() {
 	resY = tempRes;
 }
 
+void smooth::Low_passFilter(double alpha) {
+	resX.push_back(origin.front().first);
+	resY.push_back(origin.front().second);
+	for (int i = 1; i < origin.size(); i++) {
+		resX.push_back(origin[i].first);
+		resY.push_back(origin[i].second * alpha + resY[i - 1] * (1 - alpha));
+	}
+}
+
 pair<vector<double>, vector<double>> smooth::runSmooth() {
 	cout << "Linear smooth processing";
 	try {
@@ -77,5 +89,10 @@ pair<vector<double>, vector<double>> smooth::runSmooth() {
 		}
 	}
 	cout << "\ndone";
+	return {resX, resY};
+}
+
+pair<vector<double>, vector<double>> smooth::runLPSmooth(double _alpha) {
+	this->Low_passFilter(_alpha);
 	return {resX, resY};
 }
