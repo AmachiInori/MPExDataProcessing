@@ -327,6 +327,7 @@ int funcDraw::_drawPointsWithLine() {
 		saveimage((LPCTSTR)savingPath.data());
 	}
 	std::cin.get();
+	std::cin.get();
 	closegraph();
 	return 0;
 }
@@ -462,7 +463,7 @@ void funcDraw::drawUCS() {
 	initgraph(windowLength, windowHeight);
 	setbkcolor(WHITE);
 	cleardevice();
-	setlinecolor(BLACK);
+	setlinecolor(0xAFAFAF);
 	setfillcolor(BLACK);
 
 	line(left, (int)_yZero, right, (int)_yZero);
@@ -479,41 +480,46 @@ void funcDraw::drawUCS() {
 	outtextxy((int)_xZero + 10, up - 20, (LPCTSTR)YComment.data());
 
 	if (!isCompressed) {
-		int Xdanwei = max(int(std::fmax(abs(XMax), abs(XMin)) / 5), 1);
-		int Ydanwei = max(int(std::fmax(abs(YMax), abs(YMin)) / 5), 1);
+		double Xdanwei = max(int(std::fmax(abs(XMax), abs(XMin)) / 5), 1);
+		double Ydanwei = max(int(std::fmax(abs(YMax), abs(YMin)) / 5), 1);
+		while (Xdanwei >= std::fmax(abs(XMax), abs(XMin))) Xdanwei /= 5.0;
+		while (Ydanwei >= std::fmax(abs(YMax), abs(YMin))) Ydanwei /= 5.0;
 		for (int i = -15; i <= 15; i++) {
 			if (i == 0) continue;
 			if (Xdanwei * _unitX * i + _xZero < right && Xdanwei * _unitX * i + _xZero > left) {
 				line(Xdanwei * _unitX * i + _xZero, _yZero + 10, Xdanwei * _unitX * i + _xZero, _yZero - 10);
 				stringstream SS;
-				SS << (int)Xdanwei * i;
-				outtextxy((int)Xdanwei * _unitX * i + _xZero, (int)_yZero + 15, (LPCTSTR)SS.str().data());
+				SS << setprecision(3) << Xdanwei * i;
+				outtextxy((int)(Xdanwei * _unitX * i + _xZero), (int)_yZero + 15, (LPCTSTR)SS.str().data());
 			}
 			if (-Ydanwei * _unitY * i + _yZero > up && -Ydanwei * _unitY * i + _yZero < down) {
 				line(_xZero - 10, -Ydanwei * _unitY * i + _yZero, _xZero + 10, -Ydanwei * _unitY * i + _yZero);
 				stringstream SS;
-				SS << (int)Ydanwei * i;
-				outtextxy((int)_xZero - 35, (int)-Ydanwei * _unitY * i + _yZero, (LPCTSTR)SS.str().data());
+				SS << setprecision(3) << Ydanwei * i;
+				outtextxy((int)_xZero - 55, (int)(-Ydanwei * _unitY * i + _yZero), (LPCTSTR)SS.str().data());
 			}
 		}
 	} else {
-		int Xdanwei = max((XMax - XMin) / 5, 1);
-		int Ydanwei = max((YMax - YMin) / 5, 1);
+		double Xdanwei = max((XMax - XMin) / 5, 1);
+		double Ydanwei = max((YMax - YMin) / 5, 1);
+		if (Xdanwei > int(std::fmax(abs(XMax), abs(XMin)))) Xdanwei /= 5;
+		if (Ydanwei > int(std::fmax(abs(XMax), abs(XMin)))) Ydanwei /= 5;
 		for (int i = -15; i <= 15; i++) {
 			if (Xdanwei * _unitX * i + _xZero + 0.1 * (right - left) < right && Xdanwei * _unitX * i + _xZero + 0.1 * (right - left) > left) {
 				line(Xdanwei * _unitX * i + 0.1 * (right - left) + _xZero, _yZero + 10, Xdanwei * _unitX * i + 0.1 * (right - left) + _xZero, _yZero - 10);
 				stringstream SS;
-				SS << (int)Xdanwei * i + (int)XMin;
-				outtextxy((int)Xdanwei * _unitX * i + 0.1 * (right - left) + _xZero, (int)_yZero + 15, (LPCTSTR)SS.str().data());
+				SS << setprecision(3) << Xdanwei * i + XMin;
+				outtextxy((int)(Xdanwei * _unitX * i + 0.1 * (right - left) + _xZero), (int)_yZero + 15, (LPCTSTR)SS.str().data());
 			}
 			if (-Ydanwei * _unitY * i + _yZero - 0.1 * (down - up) > up && -Ydanwei * _unitY * i + _yZero - 0.1 * (down - up) < down) {
 				line(_xZero - 10, -Ydanwei * _unitY * i + _yZero - 0.1 * (down - up), _xZero + 10, -Ydanwei * _unitY * i + _yZero - 0.1 * (down - up));
 				stringstream SS;
-				SS << (int)Ydanwei * i + (int)YMin;
-				outtextxy((int)_xZero - 35, (int)-Ydanwei * _unitY * i + _yZero - 0.1 * (down - up), (LPCTSTR)SS.str().data());
+				SS << setprecision(3) << Ydanwei * i + YMin;
+				outtextxy((int)_xZero - 55, (int)(-Ydanwei * _unitY * i + _yZero - 0.1 * (down - up)), (LPCTSTR)SS.str().data());
 			}
 		}
 	}
+	setlinecolor(BLACK);
 }
 
 void funcDraw::printComment(const double sta, const double end) {

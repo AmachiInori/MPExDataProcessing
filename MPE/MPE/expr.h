@@ -3,6 +3,7 @@
 #include "functionDraw.h"
 #include "smooth.h"
 #include "message.h"
+#include <fstream>
 
 void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
 	origin.clear();
@@ -193,6 +194,132 @@ int expr2() {
 	FD.drawFunction(0, 0);
 	if (temp == "Y" || temp == "y")
 		cout << "图像保存至：" << getDesktopPath() << "\n";
+	cin.get();
+	return 0;
+}
+
+int expr7() {
+	cout << "\n-----------------------------------------------";
+	cout << "\n本子程序适用于材料物理实验:实验7  光电信号转换测试";
+	cout << "\n-----------------------------------------------";
+	ifstream infile;
+	ifstream infile2;
+	infile.open(getDesktopPath() + "\\0.txt");
+	infile2.open(getDesktopPath() + "\\1.txt");
+	while (!infile || !infile2) {
+		cout << "\n未检测到完整的实验数据文档";
+		cout << "\n请在即将打开的文件夹下加入你的实验数据文档，并命名为0.txt和1.txt\n";
+		cout << "\n按任意键打开文件夹";
+		string DESTCOM = "start \"\" \"" + getDesktopPath() + "\"";
+		system(DESTCOM.data());
+		cout << "\n如果已经放好，按任意键继续：";
+		cin.get();
+		cin.get();
+		infile.open(getDesktopPath() + "\\0.txt");
+		infile2.open(getDesktopPath() + "\\1.txt");
+	}
+	
+	cout << "\n原始数据读取成功";
+	vector<vector<pair<double, double>>> oriX(2);
+	while (1) { //去除头信息
+		string temp;
+		getline(infile, temp);
+		if (temp == "Potential/V, Current/A") {
+			getline(infile, temp);
+			break;
+		}
+	}
+	while (!infile.eof()) {
+		string temp;
+		getline(infile, temp);
+		for (int i = 0; i < temp.size(); i++) {
+			if (temp[i] == ',') {
+				temp.erase(i, 1);
+			}
+		}
+		stringstream SS(temp);
+		double tempDBLX, tempDBLY;
+		SS >> tempDBLX >> tempDBLY;
+		oriX[1].push_back({tempDBLX, tempDBLY});
+	}
+	infile.clear();
+	infile.close();
+	while (1) {
+		string temp;
+		getline(infile2, temp);
+		if (temp == "Potential/V, Current/A") {
+			getline(infile2, temp);
+			break;
+		}
+	}
+	while (!infile2.eof()) {
+		string temp;
+		getline(infile2, temp);
+		for (int i = 0; i < temp.size(); i++) {
+			if (temp[i] == ',') {
+				temp.erase(i, 1);
+			}
+		}
+		stringstream SS(temp);
+		double tempDBLX, tempDBLY;
+		SS >> tempDBLX >> tempDBLY;
+		oriX[0].push_back({tempDBLX, tempDBLY});
+	}
+	smooth _smo0(oriX[0]), _smo1(oriX[1]);
+	vector<pair<vector<double>, vector<double>>> smoRes = {_smo0.runLPSmooth(0.9), _smo1.runLPSmooth(0.9)};
+	vector<vector<double>> resX;
+	vector<vector<double>> resY;
+	resX.push_back(smoRes[0].first);
+	resX.push_back(smoRes[1].first);
+	resY.push_back(smoRes[0].second);
+	resY.push_back(smoRes[1].second);
+
+	pair<double, double> maxI, U;
+	for (int i = 0; i < resX[0].size(); i++) {
+		if (abs(resY[0][i]) < 0.001) {
+			U.first = resX[0][i];
+			break;
+		}
+	}
+	for (int i = 0; i < resX[1].size(); i++) {
+		if (abs(resY[1][i]) < 0.001) {
+			U.second = resX[1][i];
+			break;
+		}
+	}
+	for (int i = 0; i < resX[0].size(); i++) {
+		if (abs(resX[0][i]) < 0.001) {
+			maxI.first = resY[0][i];
+			if (maxI.first < 0.001) maxI.first = 0;
+			break;
+		}
+	}
+	for (int i = 0; i < resX[1].size(); i++) {
+		if (abs(resX[1][i]) < 0.001) {
+			maxI.second = resY[1][i];
+			if (maxI.second < 0.001) maxI.second = 0;
+			break;
+		}
+	}
+	cout << "\n对于数据0，推测的饱和光电流是" << setprecision(3) << maxI.first << "A\n";
+	cout << "对于数据1，推测的饱和光电流是" << setprecision(3) << maxI.second << "A\n";
+	cout << "对于数据0，推测的开路电压是" << setprecision(3) << -U.first << "V\n";
+	cout << "对于数据1，推测的开路电压是" << setprecision(3) << -U.second << "V\n";
+	cout << "对于数据0，计算的光电功率是" << setprecision(3) << -U.first * maxI.first << "W\n";
+	cout << "对于数据1，计算的光电功率是" << setprecision(3) << -U.second * maxI.second << "W\n";
+	funcDraw fc(resX, resY);
+	cout << "\n是否需要保存绘制的图像?(Y/N)\n";
+	cout << "请注意，请保证上次通过本子程序保存的同名文件已被转移，否则将被覆盖\n";
+	string temp;
+	cin >> temp;
+	if (temp == "Y" || temp == "y")
+		fc.save(getDesktopPath() + "\\expr7.png");
+	cin.clear();
+	fc.setXYComment("U/V", "I/A");
+	fc.drawFunction(1,1);
+	if (temp == "Y" || temp == "y")
+		cout << "图像保存至：" << getDesktopPath() << "\n";
+	cin.get();
 	cin.get();
 	return 0;
 }
