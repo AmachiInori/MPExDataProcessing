@@ -66,6 +66,5 @@ int console() {
 }
 
 int main() {
-    return expr7();
-//    return console();
+    return console();
 }
