@@ -214,7 +214,6 @@ int expr7() {
 		system(DESTCOM.data());
 		cout << "\n如果已经放好，按任意键继续：";
 		cin.get();
-		cin.get();
 		infile.open(getDesktopPath() + "\\0.txt");
 		infile2.open(getDesktopPath() + "\\1.txt");
 	}

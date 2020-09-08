@@ -288,7 +288,7 @@ int funcDraw::_drawPointsWithLine() {
 				putpixel(int(extraPointX[i] * _unitX + _xZero) + 1, int(-extraPointY[i] * _unitY + _yZero), BLACK);
 				putpixel(int(extraPointX[i] * _unitX + _xZero), int(-extraPointY[i] * _unitY + _yZero) + 1, BLACK);
 			} else {
-				/* 功能存在问题 删除
+				/* 功能存在问题 删除 ToDo 修复这个问题
 				putpixel(int(_xZero + 0.1 * (right - left) + (extraPointX[i] - XMin) * _unitX), 
 						int(_yZero - 0.1 * (down - up) - (extraPointY[i] - YMin) * _unitY), BLACK);
 
