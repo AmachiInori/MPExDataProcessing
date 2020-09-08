@@ -1,11 +1,13 @@
-/******************************* 
-functionDraw.h by AmachiInori
-open source by GPL 3.0
-
-author		AmachiInori
-ver 		2.01 
-date 		2020 09 07
-********************************/
+/*
+**********************************
+** functionDraw.h by AmachiInori
+** open source by GPL 3.0
+**
+** Author		AmachiInori
+** Ver	 		2.01 
+** Date 		2020 09 07
+**********************************
+*/
 #ifndef _FUNCDRAW_H
 #define _FUNCDRAW_H
 #include <graphics.h>
@@ -23,22 +25,6 @@ using namespace std;
 
 double defaultFunctionX(double x) { return x; }
 
-string getDesktopPath(){
-    LPITEMIDLIST pidl;
-    LPMALLOC pShellMalloc;
-    char szDir[200];
-    if (SUCCEEDED(SHGetMalloc(&pShellMalloc)))
-    {
-        if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, CSIDL_DESKTOP, &pidl))) {
-            SHGetPathFromIDListA(pidl, szDir);
-            pShellMalloc->Free(pidl);
-        }
-        pShellMalloc->Release();
-    }
-
-    return string(szDir);
-}
-
 class funcDraw { // easyX的文档 https://docs.easyx.cn/zh-cn/
 private:
 	typedef unsigned short mode;
@@ -49,25 +35,25 @@ private:
 	enum functionType { normal, polar, parametric, point };
 
 	const static long maxDealTime = 255;
+	double infDeal = 0.1;
 	static constexpr long infLimit = INT_MAX / 2;
 	static constexpr long BADNUMBER = INT_MIN;
 	static constexpr double doubleErr = 0.000001;
 
-	double infDeal = 0.1;
-	double zoomX = 0.3;
-	double zoomY = 0.3;
-	double XMax = DBL_MIN, XMin = DBL_MAX, YMax = DBL_MIN, YMin = DBL_MAX;
-	double _unitX = 0, _unitY = 0, _xZero = 0, _yZero = 0;
+	double zoomX = 0;//边距比例
+	double zoomY = 0;//边距比例
+	double XMax = DBL_MIN, XMin = DBL_MAX, YMax = DBL_MIN, YMin = DBL_MAX; //图像点全局范围
+	double _unitX = 0, _unitY = 0, _xZero = 0, _yZero = 0;//double->像素位置系数 和 坐标轴位置
 
-	const static mode lineMode = 0;
-	const static mode pointMode = 1;
-	functionType _type = normal;
+	const static mode lineMode = 0;//画线
+	const static mode pointMode = 1;//画点
+	functionType _type = normal;//函数类型
 	bool isGrid = false; //未实装
-	bool isLowGraph = false;
+	bool isLowGraph = false;//低分辨率标记
 	bool differentiable = true;//已删除
 	bool willDrawPoint = false;
 	bool isCompressed = false;
-	int maxThread;
+	int maxThread; //多核优化希望
 
 	vector<double> extraPointX;
 	vector<double> extraPointY;

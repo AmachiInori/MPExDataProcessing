@@ -167,7 +167,7 @@ int expr2() {
 	pair<vector<double>, vector<double>> smoothRes;
 	cout << "使用线性平滑处理输入信息\n";
 	smooth _smo(origin);
-	smoothRes = _smo.runSmooth();
+	smoothRes = _smo.runSmooth(25, 9);
 	int maxPoint = 0;
 	double max = DBL_MIN;
 	for (int i = 0; i < smoothRes.second.size() - 1; i++) {
@@ -265,7 +265,7 @@ int expr7() {
 		SS >> tempDBLX >> tempDBLY;
 		oriX[0].push_back({tempDBLX, tempDBLY});
 	}
-	smooth _smo0(oriX[0]), _smo1(oriX[1]);
+	smooth _smo0(oriX[0], 1), _smo1(oriX[1], 1);
 	vector<pair<vector<double>, vector<double>>> smoRes = {_smo0.runLPSmooth(0.9), _smo1.runLPSmooth(0.9)};
 	vector<vector<double>> resX;
 	vector<vector<double>> resY;
