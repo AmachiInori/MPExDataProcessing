@@ -323,6 +323,57 @@ int expr7() {
 	return 0;
 }
 
+int expr8() {
+	cout << "\n-----------------------------------------------";
+	cout << "\n本子程序适用于材料物理实验:实验8  ";
+	cout << "\n-----------------------------------------------";
+	ifstream infile;
+	infile.open(getDesktopPath() + "\\0.csv");
+	while (!infile) {
+		cout << "\n未检测到完整的实验数据文档";
+		cout << "\n请在即将打开的文件夹下加入你的实验数据文档，并命名为0.txt和1.txt\n";
+		cout << "\n按任意键打开文件夹";
+		string DESTCOM = "start \"\" \"" + getDesktopPath() + "\"";
+		system(DESTCOM.data());
+		cout << "\n如果已经放好，按任意键继续：";
+		cin.get();
+		infile.open(getDesktopPath() + "\\0.csv");
+	}
+	string temp;
+	while (!temp != "1") {
+		getline(infile, temp);
+	}
+	vector<pair<double, double>> origin;
+	while (!infile.eof()) {
+		getline(infile, temp);
+		for_each(temp.begin(), temp.end(), [](auto& tempChar) {
+			tempChar = ' ';
+		});
+		stringstream SS(temp);
+		double tempX, tempY;
+		SS >> tempX >> tempY;
+		origin.push_back({tempX, tempY});
+	}
+
+	smooth smo(origin);
+	pair<vector<double>, vector<double>> smoRes = smo.runBMSmooth();
+	funcDraw fc(smoRes.first, smoRes.second);
+	cout << "\n是否需要保存绘制的图像?(Y/N)\n";
+	cout << "请注意，请保证上次通过本子程序保存的同名文件已被转移，否则将被覆盖\n";
+	string temp;
+	cin >> temp;
+	if (temp == "Y" || temp == "y")
+		fc.save(getDesktopPath() + "\\expr8.png");
+	cin.clear();
+	fc.setXYComment("U/V", "I/A");
+	fc.drawFunction(1,1);
+	if (temp == "Y" || temp == "y")
+		cout << "图像保存至：" << getDesktopPath() << "\n";
+	cin.get();
+	cin.get();
+	return 0;
+}
+
 int exprC1() {
 	return 0;
 }
