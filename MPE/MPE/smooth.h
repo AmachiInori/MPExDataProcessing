@@ -36,9 +36,7 @@ public:
 
 smooth::smooth(vector<pair<double, double>> &ori, unsigned int _smoTi) 
 	: origin(ori), smoothTimes(_smoTi) {
-	sort(origin.begin(), origin.end(), [&](pair<double, double> a, pair<double, double> b) {
-		return a.first < b.first;
-	});
+	sort(origin.begin(), origin.end());
 }
 
 void smooth::linearInsert(unsigned int _reso) {
@@ -112,20 +110,20 @@ pair<vector<double>, vector<double>> smooth::runLPSmooth(double _alpha) {
 
 void smooth::binMeanSmooth(unsigned int smoothLevel) {
 	size_t i = 0;
-	for (i = 0; i < origin.size() - smoothLevel; i += smoothLevel) {
+	for (i = 0; (int)i < (int)origin.size() - (int)smoothLevel; i += smoothLevel) {
 		double mean = 0;
 		for (size_t j = 0; j < smoothLevel; j++)
-			mean += origin[i + j].second / smoothLevel;
+			mean += origin[i + j].second / (double)smoothLevel;
 		for (size_t j = 0; j < smoothLevel; j++) {
 			resX.push_back(origin[i + j].first);
 			resY.push_back(mean);
 		}
 	}
 	double mean = 0;
-	for (size_t j = 0; j < origin.size(); j++) {
-		mean += origin[i + j].second / origin.size() - i;
+	for (size_t j = 0; (int)i + (int)j < (int)origin.size(); j++) {
+		mean += origin[i + j].second / ((int)origin.size() - (int)i);
 	}
-	for (size_t j = 0; j < origin.size(); j++) {
+	for (size_t j = 0; (int)i + (int)j < origin.size(); j++) {
 		resX.push_back(origin[i + j].first);
 		resY.push_back(mean);
 	}

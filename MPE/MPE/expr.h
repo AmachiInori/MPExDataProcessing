@@ -45,7 +45,7 @@ void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
 		cin >> point;
 		while (point >= origin.size() || point < 0) {
 			cout << "序号非法，请重新输入，本次输入不需输入reinput\n";
-			cin.clear();
+			cin.sync();
 			cin >> point;
 		}
 		cin >> origin[point].first >> origin[point].second;
@@ -95,7 +95,7 @@ void dataInput(vector<double> &origin, string FST) {
 		cin >> point;
 		while (point >= origin.size() || point < 0) {
 			cout << "序号非法，请重新输入，本次输入不需输入reinput\n";
-			cin.clear();
+			cin.sync();
 			cin >> point;
 		}
 		cin >> origin[point];
@@ -113,7 +113,7 @@ void dataInput(vector<double> &origin, string FST) {
 }
 
 int expr3() {
-	cin.clear();
+	cin.sync();
 	cout << "\n-----------------------------------------------";
 	cout << "\n本子程序适用于材料物理实验:实验3 热塑性塑料熔体流动速率的测定\n";
 	vector<double> mean(4, 0);
@@ -201,7 +201,7 @@ int expr2() {
 int expr7() {
 	cout << "\n-----------------------------------------------";
 	cout << "\n本子程序适用于材料物理实验:实验7  光电信号转换测试";
-	cout << "\n-----------------------------------------------";
+	cout << "\n-----------------------------------------------\n";
 	ifstream infile;
 	ifstream infile2;
 	infile.open(getDesktopPath() + "\\0.txt");
@@ -210,6 +210,7 @@ int expr7() {
 		cout << "\n未检测到完整的实验数据文档";
 		cout << "\n请在即将打开的文件夹下加入你的实验数据文档，并命名为0.txt和1.txt\n";
 		cout << "\n按任意键打开文件夹";
+		cin.get();
 		string DESTCOM = "start \"\" \"" + getDesktopPath() + "\"";
 		system(DESTCOM.data());
 		cout << "\n如果已经放好，按任意键继续：";
@@ -313,7 +314,7 @@ int expr7() {
 	cin >> temp;
 	if (temp == "Y" || temp == "y")
 		fc.save(getDesktopPath() + "\\expr7.png");
-	cin.clear();
+	cin.sync();
 	fc.setXYComment("U/V", "I/A");
 	fc.drawFunction(1,1);
 	if (temp == "Y" || temp == "y")
@@ -325,29 +326,35 @@ int expr7() {
 
 int expr8() {
 	cout << "\n-----------------------------------------------";
-	cout << "\n本子程序适用于材料物理实验:实验8  ";
-	cout << "\n-----------------------------------------------";
+	cout << "\n本子程序适用于材料物理实验:实验8  X射线光电子能谱演示实验";
+	cout << "\n-----------------------------------------------\n";
 	ifstream infile;
 	infile.open(getDesktopPath() + "\\0.csv");
 	while (!infile) {
 		cout << "\n未检测到完整的实验数据文档";
-		cout << "\n请在即将打开的文件夹下加入你的实验数据文档，并命名为0.txt和1.txt\n";
+		cout << "\n请在即将打开的文件夹下加入你的实验数据文档，并命名为0.csv\n";
 		cout << "\n按任意键打开文件夹";
+		cin.get();
 		string DESTCOM = "start \"\" \"" + getDesktopPath() + "\"";
 		system(DESTCOM.data());
 		cout << "\n如果已经放好，按任意键继续：";
 		cin.get();
 		infile.open(getDesktopPath() + "\\0.csv");
 	}
+	cout << "\n原始数据读取成功\n";
+	cin.get();
+	cin.get();
 	string temp;
-	while (!temp != "1") {
+	while (1) {
 		getline(infile, temp);
+		if (temp == "1") break;
 	}
 	vector<pair<double, double>> origin;
 	while (!infile.eof()) {
 		getline(infile, temp);
 		for_each(temp.begin(), temp.end(), [](auto& tempChar) {
-			tempChar = ' ';
+			if(tempChar == ',') 
+				tempChar = ' ';
 		});
 		stringstream SS(temp);
 		double tempX, tempY;
@@ -355,17 +362,17 @@ int expr8() {
 		origin.push_back({tempX, tempY});
 	}
 
-	smooth smo(origin);
-	pair<vector<double>, vector<double>> smoRes = smo.runBMSmooth();
-	funcDraw fc(smoRes.first, smoRes.second);
+	smooth smo(origin, 1);
+	pair<vector<double>, vector<double>> smoRes = smo.runLPSmooth(0.5);
+	funcDraw fc(smoRes.first, smoRes.second, 3840 * 2, 2160 * 2);
 	cout << "\n是否需要保存绘制的图像?(Y/N)\n";
 	cout << "请注意，请保证上次通过本子程序保存的同名文件已被转移，否则将被覆盖\n";
-	string temp;
-	cin >> temp;
-	if (temp == "Y" || temp == "y")
+	char tempC = cin.get();
+	cin.get();
+	cout << "请注意，即将生成的图像可能尺寸很大，如果显示不全，直接敲回车即可输出为png\n";
+	if (tempC == 'Y' || tempC == 'y')
 		fc.save(getDesktopPath() + "\\expr8.png");
-	cin.clear();
-	fc.setXYComment("U/V", "I/A");
+	fc.setXYComment("eV", "data");
 	fc.drawFunction(1,1);
 	if (temp == "Y" || temp == "y")
 		cout << "图像保存至：" << getDesktopPath() << "\n";

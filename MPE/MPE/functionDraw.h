@@ -482,7 +482,7 @@ void funcDraw::drawUCS() {
 				line(_xZero - 10, -Ydanwei * _unitY * i + _yZero, _xZero + 10, -Ydanwei * _unitY * i + _yZero);
 				stringstream SS;
 				SS << setprecision(3) << Ydanwei * i;
-				outtextxy((int)_xZero - 55, (int)(-Ydanwei * _unitY * i + _yZero), (LPCTSTR)SS.str().data());
+				outtextxy((int)_xZero - 15* SS.str().length(), (int)(-Ydanwei * _unitY * i + _yZero), (LPCTSTR)SS.str().data());
 			}
 		}
 	} else {
