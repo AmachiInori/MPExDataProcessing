@@ -7,8 +7,8 @@
 #include <iostream>
 #include <string>
 #include <utility>
-#include "functionDraw.h"
-#include "message.h"
+#include "functionDraw.hpp"
+#include "message.hpp"
 
 double ___equal(double &x) { return x; }
 

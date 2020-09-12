@@ -1,9 +1,9 @@
-#include "linearAnalysis.h"
-#include "smooth.h"
-#include "expr.h"
+#include "linearAnalysis.hpp"
+#include "smooth.hpp"
+#include "expr.hpp"
 
 int console() {
-    cout << "欢迎使用MPExAutoDataAnaly实验数据处理工具，目前版本为0.13pre，更新日期20200908。\n";
+    cout << "欢迎使用MPExAutoDataAnaly实验数据处理工具，目前版本为0.13，更新日期20200908。\n";
     cout << "本工具作者@AmachiInori，本工具由GPL3.0开源，但建议你不要看它的源代码\n因为它实在是太下饭了，连我自己都不想看\n";
     vector<int(*)()> entrance({0, expr2, expr3, expr7, expr8, exprC1});
     auto getList = [](){
@@ -52,8 +52,7 @@ int console() {
                 cin.sync();
                 if(entrance[temp]() == 0) cout << "进程expr" << temp << "运行完成\n";
                 help();
-            } else {
-                cout << tempS << "不是有效的参数\n";
+            } else {                cout << tempS << "不是有效的参数\n";
             }
         } else if (com == "exit") break;
         else if (com == "docu") {
@@ -68,4 +67,4 @@ int console() {
 
 int main() {
     return console();
-}
+}   

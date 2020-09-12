@@ -1,6 +1,6 @@
 /*
 **********************************
-** functionDraw.h by AmachiInori
+** functionDraw.hpp by AmachiInori
 ** open source by GPL 3.0
 **
 ** Author		AmachiInori

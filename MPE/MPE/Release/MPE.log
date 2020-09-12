@@ -1,54 +1,54 @@
 ﻿  majorProcess.cpp
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(227,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(243,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(245,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(249,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(260,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(261,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(283,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(476,92): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(476,75): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(476,48): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(476,31): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(482,90): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(482,62): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(482,45): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(482,17): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(495,138): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(495,121): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(495,71): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(495,54): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(501,119): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(501,82): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(501,54): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.h(501,17): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\linearAnalysis.h(48,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(56,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(58,21): warning C4018: “>”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(80,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(126,37): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.h(135,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(33,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(46,16): warning C4018: “>=”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(55,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(83,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(96,16): warning C4018: “>=”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(105,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(132,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(132,34): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(135,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(136,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(173,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(235,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(258,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(278,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(284,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(290,20): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.h(297,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(227,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(243,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(245,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(249,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(260,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(261,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(283,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(476,92): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(476,75): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(476,48): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(476,31): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(482,90): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(482,62): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(482,45): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(482,17): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(495,138): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(495,121): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(495,71): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(495,54): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(501,119): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(501,82): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(501,54): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\functionDraw.hpp(501,17): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\linearAnalysis.hpp(48,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.hpp(56,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.hpp(58,21): warning C4018: “>”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.hpp(80,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.hpp(126,37): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\smooth.hpp(135,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(33,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(46,16): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(55,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(83,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(96,16): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(105,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(132,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(132,34): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(135,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(136,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(173,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(235,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(258,21): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(278,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(284,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(290,20): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\expr.hpp(297,20): warning C4018: “<”: 有符号/无符号不匹配
 C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\MPE\majorProcess.cpp(51,34): warning C4018: “<”: 有符号/无符号不匹配
   正在生成代码
-  2 of 765 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+  38 of 765 functions ( 5.0%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    45 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   MPE.vcxproj -> C:\Users\Zhao Yufeng\Documents\VSCode\C++\MPEforVS2019\MPE\Release\MPE.exe

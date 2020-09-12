@@ -140,11 +140,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="expr.h" />
-    <ClInclude Include="functionDraw.h" />
-    <ClInclude Include="linearAnalysis.h" />
-    <ClInclude Include="message.h" />
-    <ClInclude Include="smooth.h" />
+    <ClInclude Include="expr.hpp" />
+    <ClInclude Include="functionDraw.hpp" />
+    <ClInclude Include="linearAnalysis.hpp" />
+    <ClInclude Include="message.hpp" />
+    <ClInclude Include="smooth.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="majorProcess.cpp" />

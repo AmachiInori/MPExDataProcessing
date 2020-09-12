@@ -1,8 +1,8 @@
 #pragma once
-#include "linearAnalysis.h"
-#include "functionDraw.h"
-#include "smooth.h"
-#include "message.h"
+#include "linearAnalysis.hpp"
+#include "functionDraw.hpp"
+#include "smooth.hpp"
+#include "message.hpp"
 #include <fstream>
 
 void dataInput(vector<pair<double, double>> &origin, string FST, string SST) {
